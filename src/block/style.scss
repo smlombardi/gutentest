@@ -4,11 +4,22 @@
  * CSS for both Frontend+Backend.
  */
 
-.wp-block-cgb-block-gutentest  {
-  background: $red;
-  border: 0.2rem solid $black;
-  color: $black;
-  margin: 0 auto;
+.wp-block-cgb-block-gutentest {
   max-width: 740px;
   padding: 2rem;
+  border: 0.2rem solid $black;
+  margin: 0 auto;
+  background: $red;
+  color: $black;
+}
+
+.card-header {
+  padding: 15px 0 10px;
+  border-bottom: 1px solid #e1e1e1;
+  margin: 0 30px;
+  background-color: transparent;
+  border-radius: 0;
+  color: #2e2e2e;
+  font-family: 'PrecisionSans_W_Rg', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
 }

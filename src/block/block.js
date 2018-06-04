@@ -11,46 +11,17 @@ registerBlockType('card-block/main', {
 	attributes: {
 		title: {
 			source: 'text',
-			selector: '.card__title'
+			selector: '.card-header'
 		},
 		body: {
 			type: 'array',
 			source: 'children',
-			selector: '.card__body'
-		},
-		imageAlt: {
-			attribute: 'alt',
-			selector: '.card__image'
-		},
-		imageUrl: {
-			attribute: 'src',
-			selector: '.card__image'
+			selector: '.card-body'
 		}
 	},
 	edit({ attributes, className, setAttributes }) {
-		const getImageButton = openEvent => {
-			if (attributes.imageUrl) {
-				return <img src={attributes.imageUrl} onClick={openEvent} className="image" />;
-			} else {
-				return (
-					<div className="button-container">
-						<Button onClick={openEvent} className="button button-large">
-							Pick an image
-						</Button>
-					</div>
-				);
-			}
-		};
 		return (
 			<div className="container">
-				<MediaUpload
-					onSelect={media => {
-						setAttributes({ imageAlt: media.alt, imageUrl: media.url });
-					}}
-					type="image"
-					value={attributes.imageID}
-					render={({ open }) => getImageButton(open)}
-				/>
 				<PlainText
 					onChange={content => setAttributes({ title: content })}
 					value={attributes.title}
@@ -67,24 +38,12 @@ registerBlockType('card-block/main', {
 		);
 	},
 	save({ attributes }) {
-		const cardImage = (src, alt) => {
-			if (!src) return null;
-
-			if (alt) {
-				return <img className="card__image" src={src} alt={alt} />;
-			}
-
-			// No alt set, so let's hide it from screen readers
-			return <img className="card__image" src={src} alt="" aria-hidden="true" />;
-		};
+		const cardImage = (src, alt) => {};
 
 		return (
 			<div className="card">
-				{cardImage(attributes.imageUrl, attributes.imageAlt)}
-				<div className="card__content">
-					<h3 className="card__title">{attributes.title}</h3>
-					<div className="card__body">{attributes.body}</div>
-				</div>
+				<div className="card-header">{attributes.title}</div>
+				<div className="card-body">{attributes.body}</div>
 			</div>
 		);
 	}
