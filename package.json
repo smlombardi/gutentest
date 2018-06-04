@@ -1,0 +1,16 @@
+{
+	"name": "gutentest-cgb-guten-block",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"start": "cgb-scripts start",
+		"build": "cgb-scripts build",
+		"eject": "cgb-scripts eject"
+	},
+	"dependencies": {
+		"cgb-scripts": "1.9.7",
+		"prettier": "^1.12.1",
+		"prettier-stylelint": "^0.4.2",
+		"stylelint-config-idiomatic-order": "^5.0.0"
+	}
+}
