@@ -17,14 +17,14 @@
  * that are used across the project.
 */
 .gutenberg .container {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   padding: 1rem; }
 
 .gutenberg .button-container {
   text-align: center;
   padding: 22% 0;
   background: #f1f1f1;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   border-radius: 2px;
   margin: 0 0 1.2rem 0; }
 
